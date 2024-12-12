@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "licenseId": "1",
+    "description": "This is a description",
+    "organizationId": "1",
+    "productName": "Teleco",
+    "licenseType": "Seat"
+  },
+  {
+    "id": 2,
+    "licenseId": "2",
+    "description": "This is a description",
+    "organizationId": "2",
+    "productName": "Telesco",
+    "licenseType": "Seat"
+  },
+  {
+    "id": 3,
+    "licenseId": "3",
+    "description": "This is a description",
+    "organizationId": "1",
+    "productName": "Telecom",
+    "licenseType": "Seat"
+  }
+]
