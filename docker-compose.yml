@@ -1,0 +1,32 @@
+version: '3.9'
+
+services:
+  license-service:
+    image: 'optima/license-service:latest'
+    restart: always
+    container_name: license-service
+    ports:
+      - 8080:8080
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev" # Passes along environment variables to start the Docker image. 
+    # Specifies the alternative hostname for the service on the network
+    networks:
+      backend:
+        aliases: 
+          - "license-service"
+  # mssql:
+  #   image: 'mcr.microsoft.com/mssql/server:2022-latest'
+  #   restart: always
+  #   container_name: dsx-server-mssql
+  #   ports:
+  #     - 1433:1433
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #     - MSSQL_SA_PASSWORD=Pepsi#1234
+  #     - MSSQL_USER=SA
+  #   volumes:
+  #     - ./scripts:/scripts
+# Creates a custom network named backend with the default type bridge
+networks:
+  backend:
+    driver: bridge
