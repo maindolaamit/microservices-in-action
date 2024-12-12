@@ -1,6 +1,6 @@
-package com.optimagrowth.license.service;
+package com.optima.license.service;
 
-import com.optimagrowth.license.models.entity.License;
+import com.optima.license.entity.License;
 
 public interface LicenseService {
     License getLicense(String licenseId, String organizationId);

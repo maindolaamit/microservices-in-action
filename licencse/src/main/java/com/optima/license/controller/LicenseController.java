@@ -1,7 +1,7 @@
-package com.optimagrowth.license.controller;
+package com.optima.license.controller;
 
-import com.optimagrowth.license.models.entity.License;
-import com.optimagrowth.license.service.LicenseService;
+import com.optima.license.entity.License;
+import com.optima.license.service.LicenseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

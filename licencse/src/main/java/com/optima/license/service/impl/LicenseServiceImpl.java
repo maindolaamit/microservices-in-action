@@ -1,7 +1,7 @@
-package com.optimagrowth.license.service.impl;
+package com.optima.license.service.impl;
 
-import com.optimagrowth.license.models.entity.License;
-import com.optimagrowth.license.service.LicenseService;
+import com.optima.license.entity.License;
+import com.optima.license.service.LicenseService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

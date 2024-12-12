@@ -1,4 +1,4 @@
-package com.optimagrowth.license.dto;
+package com.optima.license.dto;
 
 import lombok.Builder;
 

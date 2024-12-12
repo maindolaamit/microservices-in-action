@@ -1,4 +1,4 @@
-package com.optimagrowth.license.models.entity;
+package com.optima.license.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

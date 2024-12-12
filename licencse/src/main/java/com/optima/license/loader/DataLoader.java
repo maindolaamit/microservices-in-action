@@ -1,9 +1,9 @@
-package com.optimagrowth.license.loader;
+package com.optima.license.loader;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.optimagrowth.license.models.entity.License;
-import com.optimagrowth.license.repository.LicenseRepository;
+import com.optima.license.entity.License;
+import com.optima.license.repository.LicenseRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

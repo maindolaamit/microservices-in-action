@@ -7,6 +7,16 @@ curl -X 'GET' \
   -H 'accept: application/json'
 ```
 
+Check the application configuration from the Config server in the format: 
+http://localhost:8080/{app-name}/{profile}
+Example to get values for `license-service` for `dev` environment.
+
+```curl
+curl -X 'GET' \
+  'http://localhost:8087/license-service/dev' \
+  -H 'accept: application/json'
+```
+
 ### Docker
 use `dockerfile-maven-plugin` to build your docker image based on the [Dockerfile](./dockerfile) in the project root.
 ```shell

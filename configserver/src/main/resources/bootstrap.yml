@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    # Because we will use the filesystem for storing application configuration information,
+    # we must tell the Spring Cloud Config Server to run with the native profile.
+    active: native
+cloud:
+  config:
+    server:
+      # Sets the location of the configuration files which are stored in the file system or classpath
+      native:
+        search-locations: classpath:/config # Sets the location of the configuration files
+
+server:
+  port: 8071

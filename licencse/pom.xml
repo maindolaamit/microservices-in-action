@@ -8,7 +8,7 @@
         <version>3.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.optimagrowth</groupId>
+    <groupId>com.optima</groupId>
     <artifactId>licencse</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>license</name>
@@ -34,7 +34,7 @@
         <org.testcontainers.version>1.20.0</org.testcontainers.version>
         <lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
         <jacoco.version>0.8.7</jacoco.version>
-        <docker.image.prefix>optimagrowth</docker.image.prefix>
+        <docker.image.prefix>optima</docker.image.prefix>
     </properties>
     <dependencies>
         <dependency>

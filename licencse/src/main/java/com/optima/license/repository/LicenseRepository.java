@@ -1,6 +1,6 @@
-package com.optimagrowth.license.repository;
+package com.optima.license.repository;
 
-import com.optimagrowth.license.models.entity.License;
+import com.optima.license.entity.License;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
