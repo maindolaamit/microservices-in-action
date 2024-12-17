@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: license-server # The name of the application spring cloud config server will look for
+  profiles:
+    active: dev #
+    cloud:
+      config:
+          uri: http://localhost:8071 # The location of the Spring Cloud Config Server

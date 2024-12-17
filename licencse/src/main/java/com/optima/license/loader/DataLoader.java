@@ -23,22 +23,23 @@ public class DataLoader implements CommandLineRunner {
     private final ObjectMapper mapper;
     private final LicenseRepository repository;
 
+    public static final String LICENSE_DATA_FILE = "license-data.json";
+    public static final String ORGANIZATION_DATA_FILE = "organization-data.json";
+
     public void run(String... args) throws IOException {
         log.info("Loading data...");
-        List<License> licenseList = getTypedList("license-data.json");
+        List<License> licenseList = mapper.readValue(
+                getFilePath(LICENSE_DATA_FILE)
+                , new TypeReference<>() {
+                });
         repository.saveAll(licenseList);
         log.info("Data loaded successfully, {} licenses added", licenseList.size());
     }
 
-    private <T> List<T> getTypedList(String fileName) throws IOException {
-        return mapper.readValue(getFilePath(fileName), new TypeReference<>() {
-        });
-    }
-
     private File getFilePath(String fileName) {
         return switch (fileName) {
-            case "license-data.json" -> new File("src/main/resources/data/license-data.json");
-            case "organization-data.json" -> new File("src/main/resources/data/organization-data.json");
+            case LICENSE_DATA_FILE -> new File("src/main/resources/data/license-data.json");
+            case ORGANIZATION_DATA_FILE -> new File("src/main/resources/data/organization-data.json");
             default -> throw new IllegalArgumentException("Unexpected value: " + fileName);
         };
     }

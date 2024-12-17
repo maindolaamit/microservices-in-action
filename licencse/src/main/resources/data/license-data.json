@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "licenseId": "1",
     "description": "This is a description",
     "organizationId": "1",
@@ -8,7 +7,6 @@
     "licenseType": "Seat"
   },
   {
-    "id": 2,
     "licenseId": "2",
     "description": "This is a description",
     "organizationId": "2",
@@ -16,7 +14,6 @@
     "licenseType": "Seat"
   },
   {
-    "id": 3,
     "licenseId": "3",
     "description": "This is a description",
     "organizationId": "1",

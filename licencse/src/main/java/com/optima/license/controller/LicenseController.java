@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Locale;
+
 @Slf4j
 @AllArgsConstructor
 @RestController
@@ -47,9 +49,8 @@ public class LicenseController {
     })
     public ResponseEntity<String> updateLicense(
             @PathVariable("organizationId") String organizationId,
-            @RequestBody License request) {
-        return ResponseEntity.ok(licenseService.updateLicense(request,
-                organizationId));
+            @RequestBody License request, Locale locale) {
+        return ResponseEntity.ok(licenseService.updateLicense(request, organizationId, locale));
     }
 
     @PostMapping
@@ -63,9 +64,8 @@ public class LicenseController {
     })
     public ResponseEntity<String> createLicense(
             @PathVariable("organizationId") String organizationId,
-            @RequestBody License request) {
-        return ResponseEntity.ok(licenseService.createLicense(request,
-                organizationId));
+            @RequestBody License request, Locale locale) {
+        return ResponseEntity.ok(licenseService.createLicense(request, organizationId, locale));
     }
 
     @DeleteMapping(value="/{licenseId}")
@@ -79,8 +79,7 @@ public class LicenseController {
     })
     public ResponseEntity<String> deleteLicense(
             @PathVariable("organizationId") String organizationId,
-            @PathVariable("licenseId") String licenseId) {
-        return ResponseEntity.ok(licenseService.deleteLicense(licenseId,
-                organizationId));
+            @PathVariable("licenseId") String licenseId, Locale locale) {
+        return ResponseEntity.ok(licenseService.deleteLicense(licenseId, organizationId, locale));
     }
 }

@@ -1,54 +1,17 @@
 package com.optima.license.repository;
 
 import com.optima.license.entity.License;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
-@Component
-@AllArgsConstructor
-public class LicenseRepository {
-    private final List<License> data;
+@Repository
+public interface LicenseRepository extends JpaRepository<License, String> {
+    List<License> findByOrganizationId(String organizationId);
 
-    public List<License> getLicenses() {
-        return data;
-    }
+    Optional<License> findByOrganizationIdAndLicenseId(String organizationId, String licenseId);
 
-    public License getLicense(String licenseId) {
-        return data.stream()
-                .filter(license -> license.getLicenseId().equals(licenseId))
-                .findFirst()
-                .orElse(null);
-    }
-
-    public void saveAll(List<License> licenses) {
-        data.addAll(licenses);
-    }
-
-    public void save(License license) {
-        data.add(license);
-    }
-
-    public License updateLicense(License license) {
-        License existingLicense = data.stream()
-                .filter(l -> l.getLicenseId().equals(license.getLicenseId()))
-                .findFirst()
-                .orElse(null);
-        if (existingLicense != null) {
-            data.remove(existingLicense);
-            data.add(license);
-        }
-        return license;
-    }
-
-    public void removeLicense(String licenseId) {
-        License existingLicense = data.stream()
-                .filter(l -> l.getLicenseId().equals(licenseId))
-                .findFirst()
-                .orElse(null);
-        if (existingLicense != null) {
-            data.remove(existingLicense);
-        }
-    }
+    Optional<License> findByLicenseId(String licenseId);
 }
